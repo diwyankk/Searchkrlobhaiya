@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaSearch | Compare 50+ Engines</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header with Logo & Search Bar -->
+    <header class="main-header">
+        <div class="header-container">
+            <h1 class="logo"><i class="fas fa-search"></i> MetaSearch</h1>
+            <p class="tagline">Compare results across 50+ search engines in real-time</p>
+            
+            <div class="search-box-container">
+                <div class="search-input-wrapper">
+                    <input type="text" 
+                           id="mainSearchInput" 
+                           class="search-input" 
+                           placeholder="Enter your search query...">
+                    <button id="searchButton" class="search-button">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+                <div class="engine-presets">
+                    <button class="preset-btn" data-preset="general">General (Google, Bing, DDG)</button>
+                    <button class="preset-btn" data-preset="privacy">Privacy (Startpage, Brave, Mojeek)</button>
+                    <button class="preset-btn" data-preset="academic">Academic (Google Scholar, PubMed)</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Controls for Selecting Engines per Panel -->
+    <section class="controls-section">
+        <div class="container">
+            <h2><i class="fas fa-sliders-h"></i> Configure Your Search Panels</h2>
+            <div class="panel-controls">
+                <!-- Controls for Panel 1 -->
+                <div class="control-group">
+                    <label for="panel1Select"><i class="fas fa-columns"></i> Panel 1</label>
+                    <select id="panel1Select" class="engine-select">
+                        <option value="google">Google</option>
+                        <option value="bing">Bing</option>
+                        <option value="duckduckgo">DuckDuckGo</option>
+                        <option value="ecosia">Ecosia</option>
+                        <option value="brave">Brave Search</option>
+                        <option value="startpage">Startpage</option>
+                        <option value="yandex">Yandex</option>
+                        <option value="naver">Naver</option>
+                    </select>
+                </div>
+                <!-- Controls for Panel 2 -->
+                <div class="control-group">
+                    <label for="panel2Select"><i class="fas fa-columns"></i> Panel 2</label>
+                    <select id="panel2Select" class="engine-select">
+                        <option value="bing">Bing</option>
+                        <option value="duckduckgo">DuckDuckGo</option>
+                        <option value="yahoo">Yahoo</option>
+                        <option value="ecosia">Ecosia</option>
+                        <option value="brave">Brave Search</option>
+                        <option value="startpage">Startpage</option>
+                        <option value="yandex">Yandex</option>
+                        <option value="wolfram">Wolfram Alpha</option>
+                    </select>
+                </div>
+                <!-- Controls for Panel 3 -->
+                <div class="control-group">
+                    <label for="panel3Select"><i class="fas fa-columns"></i> Panel 3</label>
+                    <select id="panel3Select" class="engine-select">
+                        <option value="duckduckgo">DuckDuckGo</option>
+                        <option value="brave">Brave Search</option>
+                        <option value="startpage">Startpage</option>
+                        <option value="mojeek">Mojeek</option>
+                        <option value="qwant">Qwant</option>
+                        <option value="pubmed">PubMed</option>
+                        <option value="scholar">Google Scholar</option>
+                        <option value="wayback">Wayback Machine</option>
+                    </select>
+                </div>
+            </div>
+            <button id="swapPanelsBtn" class="action-btn"><i class="fas fa-random"></i> Swap Panels</button>
+        </div>
+    </section>
+
+    <!-- Main Area with 3 Result Panels -->
+    <main class="results-container">
+        <div class="panel-wrapper">
+            <div class="panel-header">
+                <h3 id="panel1Title">Google Results</h3>
+                <a href="#" target="_blank" class="external-link" id="panel1Link"><i class="fas fa-external-link-alt"></i> Open Directly</a>
+            </div>
+            <div class="result-frame-container">
+                <iframe id="resultFrame1" class="result-frame" 
+                        sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
+                        loading="lazy">
+                </iframe>
+                <div class="frame-placeholder" id="placeholder1">
+                    <i class="fas fa-search"></i>
+                    <p>Search results will appear here. Enter a query above.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-wrapper">
+            <div class="panel-header">
+                <h3 id="panel2Title">Bing Results</h3>
+                <a href="#" target="_blank" class="external-link" id="panel2Link"><i class="fas fa-external-link-alt"></i> Open Directly</a>
+            </div>
+            <div class="result-frame-container">
+                <iframe id="resultFrame2" class="result-frame" 
+                        sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
+                        loading="lazy">
+                </iframe>
+                <div class="frame-placeholder" id="placeholder2">
+                    <i class="fas fa-search"></i>
+                    <p>Search results will appear here. Enter a query above.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-wrapper">
+            <div class="panel-header">
+                <h3 id="panel3Title">DuckDuckGo Results</h3>
+                <a href="#" target="_blank" class="external-link" id="panel3Link"><i class="fas fa-external-link-alt"></i> Open Directly</a>
+            </div>
+            <div class="result-frame-container">
+                <iframe id="resultFrame3" class="result-frame" 
+                        sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
+                        loading="lazy">
+                </iframe>
+                <div class="frame-placeholder" id="placeholder3">
+                    <i class="fas fa-search"></i>
+                    <p>Search results will appear here. Enter a query above.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>MetaSearch Engine Comparison Tool | Inspired by concepts like MetaCrawler[citation:4][citation:8] | Includes results from various global, privacy-focused, and specialized search engines[citation:6][citation:9].</p>
+            <p class="disclaimer-note"><i class="fas fa-exclamation-circle"></i> This tool loads external websites. Respect their terms of service.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
